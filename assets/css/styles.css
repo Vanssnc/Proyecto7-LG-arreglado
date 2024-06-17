@@ -1,0 +1,146 @@
+body {
+  margin: 0%;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "nav nav"
+    "aside main"
+    "footer footer";
+  height: 100vh;
+  grid-template-columns: 12% auto;
+  grid-template-rows: 10% auto 8%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  grid-area: nav;
+  background-color: rgb(66, 136, 222);
+  color: white;
+  font-size: 150%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.icon {
+  height: 1em;
+  width: 1em;
+  padding: 1%;
+}
+
+main {
+  grid-area: main;
+  background-color: rgb(208, 208, 208);
+  display: grid;
+  /* grid-template-columns: auto auto auto;   era el que estaba ocupando, pero no se veía bien en móviles*/ 
+  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+  gap: 1em;
+  padding: 1em;
+}
+
+main > div {
+  border: 1px solid;
+}
+
+img {
+  width: 50%;
+}
+
+.carta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imginfo {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1em;
+}
+
+.producto {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.precio{
+    margin-bottom: 2%;
+}
+.boton {
+  display: flex;
+  background-color: rgb(66, 136, 222);
+  color: white;
+  font-size: 1.2em;
+  width: 100%;
+
+  padding-top: 0.8em;
+  padding-bottom: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+aside {
+  grid-area: aside;
+  background-color: rgb(77, 77, 77);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-left: 5%;
+}
+
+.pokeballs,
+.pociones,
+.combate,
+.mt {
+  display: flex;
+  flex-direction: row;
+  font-size: 1em;
+  flex-wrap: wrap;
+}
+
+.num {
+  color: rgb(99, 187, 241);
+}
+
+footer {
+  grid-area: footer;
+  background-color: rgb(101, 101, 101);
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width:864px)
+{
+   
+    .container {
+        display: grid;
+        grid-template-areas:
+          "nav nav"
+          "aside aside"
+          "main main"
+          "footer footer";
+        height: 100vh;
+        grid-template-columns: auto auto;
+        grid-template-rows: 10% 5% auto 8%;
+}
+
+
+  .categorias {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+
+}
